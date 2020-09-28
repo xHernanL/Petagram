@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
 
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         mascotas = new ArrayList<Mascota>();
 
         mascotas.add(new Mascota(R.drawable.dog1,"Gemma"));
-        mascotas.add(new Mascota(R.drawable.dog2,"Chiquito"));
-        mascotas.add(new Mascota(R.drawable.dog3,"Toti"));
-        mascotas.add(new Mascota(R.drawable.cat1,"Uma"));
-        mascotas.add(new Mascota(R.drawable.cat2,"Pipi"));
+        mascotas.add(new Mascota(R.drawable.superdog2,"Chiquito"));
+        mascotas.add(new Mascota(R.drawable.superdog3,"Toti"));
+        mascotas.add(new Mascota(R.drawable.supercat1,"Uma"));
+        mascotas.add(new Mascota(R.drawable.supercat2,"Pipi"));
     }
 }
