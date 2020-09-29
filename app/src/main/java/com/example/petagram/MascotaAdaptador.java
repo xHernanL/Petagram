@@ -39,13 +39,15 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.tvNombreM.setText(mascota.getNombre());
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
 
-
+        /* Comentario de Favorito Icon Mascota
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(activity, "Favorito! "+mascota.getNombre(), Toast.LENGTH_SHORT).show();
-            }
-        });
+           // @Override
+            //public void onClick(View v) {
+              //  Toast.makeText(activity, "Favorito! "+mascota.getNombre(), Toast.LENGTH_SHORT).show();
+
+
+            //}
+        });*/
 
     }
 

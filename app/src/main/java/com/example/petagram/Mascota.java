@@ -4,6 +4,7 @@ public class Mascota {
     private int foto;
     private String nombre;
 
+
     public Mascota(int foto, String nombre) {
         this.foto = foto;
         this.nombre = nombre;

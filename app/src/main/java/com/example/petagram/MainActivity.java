@@ -4,6 +4,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
@@ -41,5 +44,14 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota(R.drawable.superdog3,"Toti"));
         mascotas.add(new Mascota(R.drawable.supercat1,"Uma"));
         mascotas.add(new Mascota(R.drawable.supercat2,"Pipi"));
+    }
+
+
+    public void incrementValue(View view){
+        TextView tv = findViewById(R.id.textView);
+        int i = Integer.parseInt(tv.getText().toString());
+        i++;
+        tv.setText(i+"");
+
     }
 }
