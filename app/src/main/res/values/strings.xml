@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Petagram!!</string>
+    <!-- Activity Contacto -->
+    <string name="title_contacto">Contacto</string>
+    <string name="name_contact">Nombre</string>
+    <string name="email_contact">E-mail</string>
+    <string name="msj_contact">Mensaje</string>
+    <string name="btn_send">Enviar Comentario</string>
+    <!-- Activity Acerca de -->
+    <string name="title_bio">Acerca de mí</string>
+    <string name="texto_bio">Mi nombre es Hernán López y actualmente estoy cursando el curso Desarrollo de Aplicaciones de Android :)</string>
+
+
+
+
 </resources>

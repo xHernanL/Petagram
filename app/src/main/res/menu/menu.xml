@@ -5,7 +5,14 @@
         android:id="@+id/itemStrella"
         android:title="Estrella"
         android:icon="@drawable/ic_action_name"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/contacto"
+        android:title="Contacto" />
+
+    <item
+        android:id="@+id/acercaDe"
+        android:title="Acerca de" />
 
 </menu>

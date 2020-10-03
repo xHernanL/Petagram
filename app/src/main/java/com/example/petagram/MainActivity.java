@@ -10,13 +10,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         iniciarListaMascotas();
         inicializarAdaptador();
 
-    }
+
+        }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MascotasFavoritas.class);
                 startActivity(intent);
                 return true;
+
+            case R.id.contacto:
+                Intent intentContacto = new Intent(MainActivity.this, Contacto.class);
+                startActivity(intentContacto);
+                return true;
+
+            case R.id.acercaDe:
+                Intent intentAcercaDe = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(intentAcercaDe);
+                return true;
+
             default:
                 final boolean b = super.onOptionsItemSelected(item);
                 return b;
