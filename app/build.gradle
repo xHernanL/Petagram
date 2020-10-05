@@ -41,5 +41,6 @@ dependencies {
     implementation files('libs/mail.jar')
 
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
 
 }

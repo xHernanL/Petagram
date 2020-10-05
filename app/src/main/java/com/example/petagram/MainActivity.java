@@ -82,9 +82,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     public void incrementValue(View view){
         TextView tv = findViewById(R.id.textView);
         int i = Integer.parseInt(tv.getText().toString());
@@ -112,5 +109,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar appBar = findViewById(R.id.appBar);
         setSupportActionBar(appBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        tabLayaout.getTabAt(0).setIcon(R.drawable.iconhouse);
+        tabLayaout.getTabAt(1).setIcon(R.drawable.iconpug);
+
     }
 }
