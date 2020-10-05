@@ -1,10 +1,13 @@
 package com.example.petagram;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,34 +16,40 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
-
-
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
+    private Toolbar toolbar;
+    private TabLayout tabLayaout;
+    private ViewPager viewPager;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        listaMascotas = (RecyclerView)findViewById(R.id.rvMascotas);
+        tabLayaout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        setUpViewPager();
+        setToolBar();
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
 
-        listaMascotas.setLayoutManager(llm);
-
-        iniciarListaMascotas();
-        inicializarAdaptador();
+        if (toolbar != null){
+            setSupportActionBar(toolbar);
+        }
 
 
         }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,21 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
-        listaMascotas.setAdapter(adaptador);
-    }
 
-    public void iniciarListaMascotas(){
-
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma"));
-        mascotas.add(new Mascota(R.drawable.superdog2,"Chiquito"));
-        mascotas.add(new Mascota(R.drawable.superdog3,"Toti"));
-        mascotas.add(new Mascota(R.drawable.supercat1,"Uma"));
-        mascotas.add(new Mascota(R.drawable.supercat2,"Pipi"));
-    }
 
 
     public void incrementValue(View view){
@@ -96,5 +91,26 @@ public class MainActivity extends AppCompatActivity {
         i++;
         tv.setText(i+"");
 
+    }
+
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new BlankFragment());
+
+        return fragments;
+    }
+
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        tabLayaout.setupWithViewPager(viewPager);
+
+    }
+
+    public void setToolBar(){
+        Toolbar appBar = findViewById(R.id.appBar);
+        setSupportActionBar(appBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

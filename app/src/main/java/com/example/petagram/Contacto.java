@@ -1,6 +1,7 @@
 package com.example.petagram;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class Contacto extends AppCompatActivity implements View.OnClickListener{
         buttonSend = (Button) findViewById(R.id.btn_enviar);
 
         buttonSend.setOnClickListener(this);
+        setToolBar();
     }
 
     private void sendEmail(){
@@ -42,5 +44,12 @@ public class Contacto extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         sendEmail();
 
+    }
+
+    public void setToolBar(){
+        Toolbar appBar = findViewById(R.id.appBar);
+        setSupportActionBar(appBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

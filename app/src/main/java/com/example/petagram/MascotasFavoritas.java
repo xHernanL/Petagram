@@ -1,6 +1,7 @@
 package com.example.petagram;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,11 +28,10 @@ public class MascotasFavoritas extends AppCompatActivity {
 
         iniciarListaMascotas();
         inicializarAdaptador();
+        setToolBar();
+        }
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-    }
-
-   public void inicializarAdaptador(){
+    public void inicializarAdaptador(){
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
@@ -45,5 +45,11 @@ public class MascotasFavoritas extends AppCompatActivity {
         mascotas.add(new Mascota(R.drawable.superdog3,"Toti"));
         mascotas.add(new Mascota(R.drawable.supercat1,"Uma"));
         mascotas.add(new Mascota(R.drawable.supercat2,"Pipi"));
+    }
+    public void setToolBar(){
+        Toolbar appBar = findViewById(R.id.appBar);
+        setSupportActionBar(appBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

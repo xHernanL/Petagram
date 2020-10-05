@@ -9,8 +9,8 @@
     <!-- Activity Acerca de -->
     <string name="title_bio">Acerca de mí</string>
     <string name="texto_bio">Mi nombre es Hernán López y actualmente estoy cursando el curso Desarrollo de Aplicaciones de Android :)</string>
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
