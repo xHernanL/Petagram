@@ -20,7 +20,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masco
         this.activity = activity;
     }
 
-
     @NonNull
     @Override
     public MascotaAdaptador.MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) { //Darle vida a nuestro Layaout
