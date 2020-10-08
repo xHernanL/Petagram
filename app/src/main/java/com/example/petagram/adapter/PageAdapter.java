@@ -1,4 +1,4 @@
-package com.example.petagram;
+package com.example.petagram.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

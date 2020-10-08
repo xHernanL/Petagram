@@ -1,4 +1,4 @@
-package com.example.petagram;
+package com.example.petagram.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.petagram.modelo.Mascota;
+import com.example.petagram.R;
 
 import java.util.ArrayList;
 
